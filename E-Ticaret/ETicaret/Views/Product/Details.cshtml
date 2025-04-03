@@ -1,0 +1,21 @@
+﻿@model ETicaret.Models.Product
+@{
+    ViewData["Title"] = "Ürün Detayları";
+}
+<div class="container">
+    <h2 class="mt-3">Ürün Detayları</h2>
+    <div class="mt-3">
+        <dl class="row">
+            <dt class="col-sm-2">Ürün Adı:</dt>
+            <dd class="col-sm-10">@Model.Name</dd>
+            <dt class="col-sm-2">Fiyat:</dt>
+            <dd class="col-sm-10">@Model.Price</dd>
+            <dt class="col-sm-2">Kategori:</dt>
+            <dd class="col-sm-10">@Model.Category?.Name</dd>
+        </dl>
+    </div>
+    <div class="mt-3">
+        <a asp-action="Edit" asp-route-id="@Model.ProductId" class="btn btn-warning">Düzenle</a>
+        <a asp-action="Index" class="btn btn-secondary">Listeye Dön</a>
+    </div>
+</div>
